@@ -13,10 +13,16 @@ Categories: identities, publications
 Works:
 
 - 
-  name: Logo
+  title: publication
   image:
     - file://s27uan0cc5eqhzo8
   categories: publications, identities
+  name: Logo
+- 
+  title: website
+  image:
+    - file://a3yyuqevqrvusdfk
+  categories: web
 
 ----
 

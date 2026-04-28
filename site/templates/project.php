@@ -2,14 +2,15 @@
 
 $kirby->response()->json();
 
-/*[
-    'name' => $work->title()->value(),
-    'image' => $work->image(),
-  ];*/
+/**/
 
 $works = [];
-foreach($page->works() as $key => $work) {
-  $works[$key] = $work; // structure field format stores as yaml... any way to convert to json? or is there a different field type in kirby... array of objects? is that possible???
+foreach($page->works()->toStructure() as $key => $work) {
+  $works[$key] = [
+    'name' => $work->title()->value(),
+    'image' => $work->image()->url(), // this not giving url for some reason...
+    'categories' => $work->categories()->value(), // currently just giving strings, will be a helper function somewhere
+  ]; 
 }
 
 
@@ -17,8 +18,8 @@ $data = [
   'title' => $page->title()->value(),
   'slug' => $page->slug(),
   'date' => $page->date()->value(),
-  'categories' => $page->categories()->value(),
-  'works' => $page->works()->value(),
+  'categories' => $page->categories()->value(), // currently just giving strings, will be a helper function somewhere
+  'works' => $works,
 ];
 
 echo json_encode($data);
