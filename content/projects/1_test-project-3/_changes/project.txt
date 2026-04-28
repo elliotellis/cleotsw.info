@@ -17,19 +17,22 @@ Tags: Identities, Web, Ephemera
 Works:
 
 - 
-  name: Website
-  image:
-    - file://jekf6srsyyhfqy2y
-  tags: Identities, Web
-- 
   name: Logo
   image:
     - file://c9ysitz527zvjhmt
+  categories: ""
   tags: Identities
+- 
+  name: Website
+  image:
+    - file://jekf6srsyyhfqy2y
+  categories: ""
+  tags: Web
 - 
   name: Menu
   image:
     - file://fj3sjqr48fztdwsc
+  categories: ""
   tags: Ephemera
 
 ----
@@ -43,3 +46,15 @@ Intro:
 ----
 
 Uuid: tuwc72lbn3gvqprd
+
+----
+
+Lock: te9GcmDd
+
+----
+
+Date: 
+
+----
+
+Categories: 

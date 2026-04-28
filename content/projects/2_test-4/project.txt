@@ -2,6 +2,28 @@ Title: Test 4
 
 ----
 
+Date: 2026-04-28
+
+----
+
+Categories: identities, publications
+
+----
+
+Works:
+
+- 
+  name: Logo
+  image:
+    - file://s27uan0cc5eqhzo8
+  categories: publications, identities
+
+----
+
+Text: test test
+
+----
+
 Headline: test 4
 
 ----
@@ -15,10 +37,6 @@ Tags:
 ----
 
 Intro: 
-
-----
-
-Text: 
 
 ----
 
