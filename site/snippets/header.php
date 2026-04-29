@@ -26,6 +26,7 @@
     :root {
       --colour-white: #fff;
       --colour-black: #000;
+      --colour-grey: #aaa;
 
       --typeface-main: 'EB Garamond', serif;
       --typeface-texts: 'Courier New', monospace;
@@ -34,8 +35,8 @@
       --fontweight-bold: 700;
       --leading-base: 1.5em;
 
-      --typesize-body: 1.5rem;
-      --leading-body: 2.25rem;
+      --typesize-body: 1.125rem;
+      --typesize-nav: 1.5rem;
 
       --margin-base: calc( (3vw + 3vh) / 2 );
     }
@@ -58,6 +59,11 @@
       position: relative;
     }
 
+    ::selection {
+      color: red;
+      background-color: var(--colour-grey);
+    }
+
     em { font-style: italic; }
     strong { font-weight: var(--fontweight-bold); }
     .bold { font-weight: var(--fontweight-bold); }
@@ -65,6 +71,21 @@
     a { 
       color: inherit; 
       text-decoration: none;
+      font-variant-caps: all-small-caps;
+      -moz-font-feature-settings: "smcp";
+      -webkit-font-feature-settings: "smcp";
+      font-feature-settings: "smcp";
+      letter-spacing: 0.05em;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.09em;
+      text-underline-offset: 0.2em;
+    }
+
+    p:not(:first-child) {
+      margin: 1rem 0 0;
     }
 
     h1 {
@@ -87,12 +108,33 @@
 			grid-column: col-start / span 12;
 		}
 
-    .header {
-      padding: var(--margin-base);
-      height: 100vh;
+    .header, .main {
       display: flex;
       flex-direction: column;
+      padding: var(--margin-base);
+      overflow-x: hidden;
+    }
+
+    @media only screen and (42rem < width) {
+      .header { 
+        grid-column: col-start / span 4; 
+        height: 100vh;
+      }
+      .main { grid-column: 5 / span 8; }
+    }
+
+    .header {
+      /*
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow-y: scroll;*/
       justify-content: space-between;
+    }
+
+    .main-navigation {
+      font-size: var(--typesize-nav);
+      margin-bottom: 2rem;
     }
 
     .main-navigation > * {
@@ -105,11 +147,21 @@
       font-weight: inherit;
     }
 
-    .site-name span {
-      font-variant-caps: all-small-caps;
-      -moz-font-feature-settings: "smcp";
-      -webkit-font-feature-settings: "smcp";
-      font-feature-settings: "smcp";
+    .site-name a, 
+    .projects-navigation a, 
+    .pages-navigation a,
+    .about-page a {
+      font-variant-caps: normal;
+      -moz-font-feature-settings: normal;
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      letter-spacing: 0;
+    }
+
+    .site-name a:hover, 
+    .projects-navigation a:hover, 
+    .pages-navigation a:hover {
+      text-decoration: none;
     }
 
     .projects-navigation li::before {
@@ -123,6 +175,82 @@
       opacity: 1;
     }
 
+    .site-name::after { content: '\a0\2012\2012\2012'; }
+    .pages-navigation li::after { content: '\a0\a0\a0\2012\2012\2012'; }
+
+    .site-name::after, .pages-navigation li::after {
+      letter-spacing: -0.05em;
+      opacity: 0;
+    }
+
+    .site-name::after, .pages-navigation li:hover::after,
+    .site-name::after, .pages-navigation li.current::after {
+      opacity: 1;
+    }
+
+    .footer-navigation ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .footer-navigation li:not(:last-child) {
+      margin-right: 0.25em;
+    }
+
+    .footer-navigation li:not(:last-child)::after {
+      content: ",";
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .project-image {
+      margin-bottom: var(--margin-base);
+    }
+
+    @media only screen and (42rem < width) {
+      .piw-75 img { width: 75%; }
+      .piw-50 img { width: 50%; }
+    }
+
+    .about-page {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-page .text-container {
+      padding-top: 4rem;
+      font-family: serif;
+      text-align: justify;
+      letter-spacing: 0.05em;
+      line-height: 1.75;
+    }
+
+    @media only screen and (42rem < width) {
+      .about-page .text-container {
+        padding-top: 0;
+      }
+    }
+
+    .about-page p {
+      margin: 1em auto 0;
+      max-width: 40em;
+      font-size: 0.9rem;
+    }
+
+    .about-page a {
+      color: red;
+      letter-spacing: inherit;
+    }
+
     </style>
 	</head>
 	<body>
@@ -134,7 +262,6 @@
         <h1 class="site-name">
           <a href="<?= $site->url() ?>">
             <?= $site->title()->html() ?>
-            <!-- cleo <span>TSW</span> -->
           </a>
         </h1>
         <ul class="projects-navigation">
@@ -146,16 +273,18 @@
         <ul class="pages-navigation">
           <li><a href="<?= $site->url() ?>/texts">Texts</a></li>
           <li><a href="<?= $site->url() ?>/about">About</a></li>
-          <li><a href="https://o-c.info">O-C</a></li>
           <!--
           <?php foreach ($pages as $page): ?>
             <li><a href="<?php $page->url() ?>"><?php $page->title()->html() ?></a></li>
           <?php endforeach; ?>
           -->
         </ul>
+        <ul class="external-links-navigation">
+        </ul>
       </nav>
       <nav class="footer-navigation">
         <ul>
+          <li><a href="https://o-c.info">Off Course</a></li>
           <li><a href="mailto:">Email</a></li>
         </ul>
       </nav>
