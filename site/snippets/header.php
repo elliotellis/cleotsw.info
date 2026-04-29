@@ -3,11 +3,20 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="text-scale" content="scale" />
 		<title><?= $site->title()->html() ?></title>
     <style>
     @font-face {
-      
+      font-family: 'EB Garamond';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/assets/fonts/ebgaramond-reg.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'EB Garamond';
+      font-style: italic;
+      font-weight: 400;
+      src: url('/assets/fonts/ebgaramond-ita.woff2') format('woff2');
     }
 
     *, *::before, *::after {
@@ -20,7 +29,7 @@
 
       --typeface-main: 'EB Garamond', serif;
       --typeface-texts: 'Courier New', monospace;
-      --font-stroke: .2px;
+      --font-stroke: .5px;
       --fontweight-reg: 400;
       --fontweight-bold: 700;
       --leading-base: 1.5em;
@@ -28,7 +37,7 @@
       --typesize-body: 1.5rem;
       --leading-body: 2.25rem;
 
-      --margin-base: 2rem;
+      --margin-base: calc( (3vw + 3vh) / 2 );
     }
 
     body {
@@ -46,8 +55,6 @@
       min-width: 320px;
       min-height: 100vh;
       margin: 0;
-      display: grid;
-      grid-template-rows: 1fr auto;
       position: relative;
     }
 
@@ -66,28 +73,70 @@
 
     ul {
       padding: 0;
+      margin: 0;
       list-style-type: none;
     }
 
+    .grid {
+      display: grid;
+  		grid-template-columns: repeat(12, [col-start] 1fr);
+      grid-template-rows: 1fr auto;
+    }
+
+		.grid > * {
+			grid-column: col-start / span 12;
+		}
+
     .header {
-      padding: 2rem;
+      padding: var(--margin-base);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .main-navigation > * {
+      margin-bottom: calc(0.5 * var(--margin-base));
     }
 
     .site-name {
+      margin-top: -0.15em;
       font-size: inherit;
       font-weight: inherit;
     }
+
+    .site-name span {
+      font-variant-caps: all-small-caps;
+      -moz-font-feature-settings: "smcp";
+      -webkit-font-feature-settings: "smcp";
+      font-feature-settings: "smcp";
+    }
+
+    .projects-navigation li::before {
+      content: '\2012\2012\2012\a0\a0\a0';
+      letter-spacing: -0.05em;
+      opacity: 0;
+    }
+
+    .projects-navigation li:hover::before,
+    .projects-navigation li.current::before {
+      opacity: 1;
+    }
+
     </style>
 	</head>
 	<body>
 
+    <div class="grid">
+
     <header class="header">
-      <h1 class="site-name">
-        <a href="<?= $site->url() ?>">
-          <?= $site->title()->html() ?>
-        </a>
-      </h1>
       <nav class="main-navigation">
+        <h1 class="site-name">
+          <a href="<?= $site->url() ?>">
+            <?= $site->title()->html() ?>
+            <!-- cleo <span>TSW</span> -->
+          </a>
+        </h1>
         <ul class="projects-navigation">
           <li><a href="<?= $site->url() ?>/projects/identities">Identities</a></li>
           <li><a href="<?= $site->url() ?>/projects/publications">Publications</a></li>
