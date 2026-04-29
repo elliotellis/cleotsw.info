@@ -1,0 +1,15 @@
+title: Text
+preset: pages
+
+status:
+  draft: Draft
+  listed: Published
+
+fields:
+  date:
+    type: date
+    default: today
+    required: true
+  text:
+    type: textarea
+    size: large

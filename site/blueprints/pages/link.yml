@@ -1,0 +1,5 @@
+title: External link
+
+fields:
+  url:
+    type: text

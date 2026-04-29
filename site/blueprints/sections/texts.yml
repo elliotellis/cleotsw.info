@@ -1,0 +1,4 @@
+type: pages
+label: Texts
+parent: kirby.page('texts')
+template: text

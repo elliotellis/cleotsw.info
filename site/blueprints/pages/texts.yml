@@ -1,0 +1,12 @@
+title: Texts
+preset: pages
+icon: 📝
+
+drafts:
+  extends: sections/texts
+  label: Text drafts
+
+listed:
+  extends: sections/texts
+  label: Published texts
+  layout: cards

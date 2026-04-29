@@ -12,9 +12,10 @@ foreach ($page->children()->listed() as $project) {
 
 $data = [
   'title' => $page->title()->value(),
+  'projects' => $projects,
 ];
 
-echo json_encode($data + $projects);
+echo json_encode($data);
 
 /*
 

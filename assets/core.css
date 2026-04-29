@@ -1,0 +1,47 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --colour-white: #fff;
+  --colour-black: #000;
+
+  --typeface-main: 'EB Garamond', serif;
+  --typeface-texts: 'Courier New', monospace;
+  --fontweight-reg: 400;
+  --fontweight-bold: 700;
+  --leading-base: 1.5em;
+
+  --typesize-body: 1.25rem;
+  --leading-body: 1.875rem;
+
+  --margin-base: 2rem;
+}
+
+body {
+  --background: var(--colour-white);
+  --text-colour: var(--colour-black);
+  font-family: var(--typeface-main);
+  line-height: var(--leading-main);
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--background);
+  color: var(--text-colour);
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+}
+
+em { font-style: italic; }
+strong { font-weight: var(--fontweight-bold); }
+.bold { font-weight: var(--fontweight-bold); }
+a { color: inherit; }
+ul {
+  padding: 0;
+  list-style-type: none;
+}
