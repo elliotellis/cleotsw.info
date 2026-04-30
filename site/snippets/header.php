@@ -39,6 +39,11 @@
       --fontweight-reg: 400;
       --fontweight-bold: 700;
       --leading-base: 1.5em;
+      --tracking-base: 0.02em;
+      --tracking-nav: 0.01em;
+      --tracking-smcp: 0.05em;
+      --tracking-texts: 0.05em;
+      
 
       --typesize-body: 1.125rem;
       --typesize-nav: 1.5rem;
@@ -52,7 +57,8 @@
       font-family: var(--typeface-main);
       font-size: var(--typesize-body);
       -webkit-text-stroke: var(--font-stroke);
-      line-height: var(--leading-main);
+      line-height: var(--leading-base);
+      letter-spacing: var(--tracking-base);
       text-rendering: optimizeLegibility;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
@@ -80,7 +86,7 @@
       -moz-font-feature-settings: "smcp";
       -webkit-font-feature-settings: "smcp";
       font-feature-settings: "smcp";
-      letter-spacing: 0.05em;
+      letter-spacing: var(--tracking-smcp);
     }
 
     a:hover {
@@ -124,14 +130,14 @@
 
     @media only screen and (42rem < width) {
       .header { 
-        grid-column: col-start / span 4; 
+        grid-column: col-start / span 5; 
         position: sticky;
         top: 0;
         min-height: 100vh;
         max-height: 100vh;
         overflow-y: scroll;
       }
-      .main { grid-column: 5 / span 8; }
+      .main { grid-column: 6 / span 7; }
     }
 
     .header {
@@ -160,13 +166,12 @@
 
     .site-name a, 
     .projects-navigation a, 
-    .pages-navigation a,
-    .page a {
+    .pages-navigation a {
       font-variant-caps: normal;
       -moz-font-feature-settings: normal;
       -webkit-font-feature-settings: normal;
       font-feature-settings: normal;
-      letter-spacing: 0;
+      letter-spacing: var(--tracking-nav);
     }
 
     .site-name a:hover, 
@@ -223,6 +228,10 @@
       margin: 0 auto;
     }
 
+    figcaption {
+      padding-top: 0.5rem;
+    }
+
     .project-image {
       margin-bottom: var(--margin-base);
     }
@@ -243,11 +252,10 @@
       margin-top: 0;
     }
 
-    .page .text-container,
     .texts .text-container {
       font-family: serif;
       text-align: justify;
-      letter-spacing: 0.05em;
+      letter-spacing: var(--tracking-texts);
       line-height: 1.75;
     }
 
@@ -257,20 +265,16 @@
       }
     }
 
-    .page p,
     .texts p {
       margin: 1em auto 0;
       max-width: 40em;
       font-size: 0.9rem;
     }
 
-    .page a,
     .texts a {
       color: red;
       letter-spacing: inherit;
     }
-
-    
 
     .text:not(:first-of-type) {
       border-top: 2px solid var(--text-colour);
