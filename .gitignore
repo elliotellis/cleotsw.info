@@ -51,5 +51,4 @@ Icon
 
 
 # Content
-/content/**
-/content
+content/*

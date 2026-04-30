@@ -1,9 +1,0 @@
-Sort: 1
-
-----
-
-Uuid: k1le4dws0r22rkf7
-
-----
-
-Template: cover

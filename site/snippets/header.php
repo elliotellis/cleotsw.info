@@ -239,6 +239,10 @@
       padding-top: 4rem;
     }
 
+    .page .text-container > *:first-of-type {
+      margin-top: 0;
+    }
+
     .page .text-container,
     .texts .text-container {
       font-family: serif;
@@ -249,7 +253,7 @@
 
     @media only screen and (42rem < width) {
       .page {
-        padding-top: 0;
+        padding-top: var(--margin-base);
       }
     }
 
@@ -266,9 +270,15 @@
       letter-spacing: inherit;
     }
 
+    
+
     .text:not(:first-of-type) {
       border-top: 2px solid var(--text-colour);
       margin-top: 2rem;
+    }
+
+    .text:first-of-type h3 {
+      margin-top: 0;
     }
 
     </style>
@@ -293,7 +303,7 @@
         </ul>
         <ul class="pages-navigation">
           <li class="<?php if ($pageSlug === 'texts') echo 'current'; ?>"><a href="<?= $site->url() ?>/texts">Texts</a></li>
-          <li class="<?php if ($pageSlug === 'about') echo 'current'; ?>"><a href="<?= $site->url() ?>/about">About</a></li>
+          <li class="<?php if ($pageSlug === 'information') echo 'current'; ?>"><a href="<?= $site->url() ?>/information">Information</a></li>
         </ul>
       </nav>
       <nav class="footer-navigation">
