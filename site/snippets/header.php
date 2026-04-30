@@ -3,7 +3,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title><?= $site->title()->html() ?></title>
+		<title>
+      <?php if ($page->title()->html() != "Home"): ?>
+        <?= $page->title()->html() ?> &ndash;
+      <?php endif; ?>
+      <?= $site->title()->html() ?>
+    </title>
     <style>
     @font-face {
       font-family: 'EB Garamond';
@@ -231,10 +236,11 @@
     .page {
       display: flex;
       flex-direction: column;
+      padding-top: 4rem;
     }
 
-    .page .text-container {
-      padding-top: 4rem;
+    .page .text-container,
+    .texts .text-container {
       font-family: serif;
       text-align: justify;
       letter-spacing: 0.05em;
@@ -242,20 +248,27 @@
     }
 
     @media only screen and (42rem < width) {
-      .page .text-container {
+      .page {
         padding-top: 0;
       }
     }
 
-    .page p {
+    .page p,
+    .texts p {
       margin: 1em auto 0;
       max-width: 40em;
       font-size: 0.9rem;
     }
 
-    .page a {
+    .page a,
+    .texts a {
       color: red;
       letter-spacing: inherit;
+    }
+
+    .text:not(:first-of-type) {
+      border-top: 2px solid var(--text-colour);
+      margin-top: 2rem;
     }
 
     </style>
