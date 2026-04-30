@@ -285,7 +285,20 @@
       margin-top: 0;
     }
 
+    p:has(code) {
+      width: 100%;
+      border-top: 1px solid var(--text-colour);
+      height: 0;
+    }
+
+    p > code {
+      display: none;
+    }
+
     </style>
+    <script>
+      console.log(`<?= $site->children()->listed() ?>`);
+    </script>
 	</head>
 	<body>
     <?php $pageSlug = $page->slug(); ?>
@@ -312,8 +325,12 @@
       </nav>
       <nav class="footer-navigation">
         <ul>
+          <?php foreach ($site->children()->listed()->filterBy('template', 'link') as $link): ?>
+            test
+            <?= $link->url() ?>
+          <?php endforeach; ?>
           <li><a href="https://o-c.info" target="_blank">Off Course</a></li>
-          <li><a href="mailto:">Email</a></li>
+          <li><a href="mailto:cleotsw@gmail.com">Email</a></li>
         </ul>
       </nav>
     </header>
