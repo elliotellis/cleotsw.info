@@ -272,29 +272,19 @@
           </a>
         </h1>
         <ul class="projects-navigation">
-          <li><a href="<?= $site->url() ?>/projects/identities">Identities</a></li>
-          <li><a href="<?= $site->url() ?>/projects/publications">Publications</a></li>
-          <li><a href="<?= $site->url() ?>/projects/websites">Websites</a></li>
-          <li><a href="<?= $site->url() ?>/projects/ephemera">Ephemera</a></li>
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/identities">Identities</a></li>
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/publications">Publications</a></li>
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/websites">Websites</a></li>
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/ephemera">Ephemera</a></li>
         </ul>
         <ul class="pages-navigation">
-          <?php foreach ($site->children()->listed() as $item): ?>
-            <a <?php e($item->isOpen(), 'aria-current="page"') ?> href="<?= $item->url() ?>"><?= $item->title()->esc() ?></a>
-          <?php endforeach ?>
-          <li><a href="<?= $site->url() ?>/texts">Texts</a></li>
-          <li><a href="<?= $site->url() ?>/about">About</a></li>
-          <!--
-          <?php foreach ($pages as $page): ?>
-            <li><a href="<?php $page->url() ?>"><?php $page->title()->html() ?></a></li>
-          <?php endforeach; ?>
-          -->
-        </ul>
-        <ul class="external-links-navigation">
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/texts">Texts</a></li>
+          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/about">About</a></li>
         </ul>
       </nav>
       <nav class="footer-navigation">
         <ul>
-          <li><a href="https://o-c.info">Off Course</a></li>
+          <li><a href="https://o-c.info" target="_blank">Off Course</a></li>
           <li><a href="mailto:">Email</a></li>
         </ul>
       </nav>
