@@ -156,7 +156,7 @@
     .site-name a, 
     .projects-navigation a, 
     .pages-navigation a,
-    .about-page a {
+    .page a {
       font-variant-caps: normal;
       -moz-font-feature-settings: normal;
       -webkit-font-feature-settings: normal;
