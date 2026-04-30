@@ -38,7 +38,7 @@
       --font-stroke: .5px;
       --fontweight-reg: 400;
       --fontweight-bold: 700;
-      --leading-base: 1.5em;
+      --leading-base: 1.3;
       --tracking-base: 0.02em;
       --tracking-nav: 0.01em;
       --tracking-smcp: 0.05em;
