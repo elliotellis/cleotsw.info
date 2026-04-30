@@ -28,12 +28,24 @@ fields:
     required: true
     fields:
       title:
-        label: Type
+        label: Name
+        help: Used for reference and for the image alt text
         type: text
       image:
         label: Image
         type: files
         template: image
+        required: true
+        max: 1
+      width:
+        label: Image width
+        type: select
+        default: full
+        required: true
+        options:
+          full: 100%
+          threeq: 75%
+          half: 50%
       categories:
         label: Categories
         type: multiselect
@@ -43,9 +55,10 @@ fields:
           publications: Publications
           web: Web
           ephemera: Ephemera
-  text:
-    type: textarea
-    size: large
+      caption:
+        label: Caption
+        type: textarea
+        size: small
 
 
 #drafts:

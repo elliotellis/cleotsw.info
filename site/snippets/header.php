@@ -84,6 +84,8 @@
       text-underline-offset: 0.2em;
     }
 
+    p { margin: 0; }
+
     p:not(:first-child) {
       margin: 1rem 0 0;
     }
@@ -118,7 +120,10 @@
     @media only screen and (42rem < width) {
       .header { 
         grid-column: col-start / span 4; 
-        height: 100vh;
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        overflow-y: scroll;
       }
       .main { grid-column: 5 / span 8; }
     }
@@ -217,16 +222,17 @@
     }
 
     @media only screen and (42rem < width) {
-      .piw-75 img { width: 75%; }
-      .piw-50 img { width: 50%; }
+      .piw-full img { width: 100%; }
+      .piw-threeq img { width: 75%; }
+      .piw-half img { width: 50%; }
     }
 
-    .about-page {
+    .page {
       display: flex;
       flex-direction: column;
     }
 
-    .about-page .text-container {
+    .page .text-container {
       padding-top: 4rem;
       font-family: serif;
       text-align: justify;
@@ -235,18 +241,18 @@
     }
 
     @media only screen and (42rem < width) {
-      .about-page .text-container {
+      .page .text-container {
         padding-top: 0;
       }
     }
 
-    .about-page p {
+    .page p {
       margin: 1em auto 0;
       max-width: 40em;
       font-size: 0.9rem;
     }
 
-    .about-page a {
+    .page a {
       color: red;
       letter-spacing: inherit;
     }
@@ -271,6 +277,9 @@
           <li><a href="<?= $site->url() ?>/projects/ephemera">Ephemera</a></li>
         </ul>
         <ul class="pages-navigation">
+          <?php foreach ($site->children()->listed() as $item): ?>
+            <a <?php e($item->isOpen(), 'aria-current="page"') ?> href="<?= $item->url() ?>"><?= $item->title()->esc() ?></a>
+          <?php endforeach ?>
           <li><a href="<?= $site->url() ?>/texts">Texts</a></li>
           <li><a href="<?= $site->url() ?>/about">About</a></li>
           <!--

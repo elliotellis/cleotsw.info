@@ -1,5 +1,7 @@
 <?php snippet('header'); ?>
+<?php snippet('projects'); ?>
 
+<!--
 <main class="main projects">
     <div class="project">
       <figure class="project-image piw-100">
@@ -23,6 +25,6 @@
       <figure class="project-image piw-100"><img src="/assets/sample-images/img14.jpg" alt=""></figure>
       <figure class="project-image piw-100"><img src="/assets/sample-images/img15.jpg" alt=""></figure>
     </div>
-</main>
+</main>-->
 
 <?php snippet('footer'); ?>

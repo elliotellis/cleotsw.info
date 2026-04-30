@@ -2,6 +2,47 @@ Title: Test project 3
 
 ----
 
+Date: 2026-04-30
+
+----
+
+Categories: identities
+
+----
+
+Works:
+
+- 
+  title: NEW TEST
+  image:
+    - file://k1le4dws0r22rkf7
+  width: full
+  categories: identities, publications
+  caption: 'dsnviwpvopwev (link: http://cleotsw.info text: link)'
+  text: 'rejgiorejgpore (link: https://google.com text: link)'
+- 
+  title: grjeiogre
+  image:
+    - file://jekf6srsyyhfqy2y
+  width: full
+  categories: publications
+  caption: ""
+  text: ""
+  name: Website
+  tags: Web
+- 
+  title: fjergopreop
+  image:
+    - file://fj3sjqr48fztdwsc
+  width: threeq
+  categories: publications
+  caption: ""
+  text: ""
+  name: Menu
+  tags: Ephemera
+
+----
+
 Headline: Test 3
 
 ----
@@ -11,26 +52,6 @@ Year: 2018
 ----
 
 Tags: Identities, Web, Ephemera
-
-----
-
-Works:
-
-- 
-  name: Website
-  image:
-    - file://jekf6srsyyhfqy2y
-  tags: Identities, Web
-- 
-  name: Logo
-  image:
-    - file://c9ysitz527zvjhmt
-  tags: Identities
-- 
-  name: Menu
-  image:
-    - file://fj3sjqr48fztdwsc
-  tags: Ephemera
 
 ----
 
