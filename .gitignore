@@ -51,5 +51,5 @@ Icon
 
 
 # Content
-content/*
-content/site.txt
+/content/*
+/content/site.txt
