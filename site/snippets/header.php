@@ -189,8 +189,8 @@
       opacity: 0;
     }
 
-    .site-name::after, .pages-navigation li:hover::after,
-    .site-name::after, .pages-navigation li.current::after {
+    .site-name:hover::after, .pages-navigation li:hover::after,
+    .site-name.current::after, .pages-navigation li.current::after {
       opacity: 1;
     }
 
@@ -259,27 +259,32 @@
     }
 
     </style>
+
+    <script>
+      console.log(`<?php dump($page) ?>`);
+    </script>
 	</head>
 	<body>
+    <?php $pageSlug = $page->slug(); ?>
 
     <div class="grid">
 
     <header class="header">
       <nav class="main-navigation">
-        <h1 class="site-name">
+        <h1 class="site-name <?php if ($pageSlug === 'home') echo 'current'; ?>">
           <a href="<?= $site->url() ?>">
             <?= $site->title()->html() ?>
           </a>
         </h1>
         <ul class="projects-navigation">
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/identities">Identities</a></li>
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/publications">Publications</a></li>
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/websites">Websites</a></li>
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/ephemera">Ephemera</a></li>
+          <li class="<?php if ($pageSlug === 'identities') echo 'current'; ?>"><a href="<?= $site->url() ?>/identities">Identities</a></li>
+          <li class="<?php if ($pageSlug === 'publications') echo 'current'; ?>"><a href="<?= $site->url() ?>/publications">Publications</a></li>
+          <li class="<?php if ($pageSlug === 'websites') echo 'current'; ?>"><a href="<?= $site->url() ?>/websites">Websites</a></li>
+          <li class="<?php if ($pageSlug === 'ephemera') echo 'current'; ?>"><a href="<?= $site->url() ?>/ephemera">Ephemera</a></li>
         </ul>
         <ul class="pages-navigation">
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/texts">Texts</a></li>
-          <li <?php e($page->isOpen(), 'class="current"') ?>><a <?php e($page->isOpen(), 'aria-current="page"') ?> href="<?= $site->url() ?>/about">About</a></li>
+          <li class="<?php if ($pageSlug === 'texts') echo 'current'; ?>"><a href="<?= $site->url() ?>/texts">Texts</a></li>
+          <li class="<?php if ($pageSlug === 'about') echo 'current'; ?>"><a href="<?= $site->url() ?>/about">About</a></li>
         </ul>
       </nav>
       <nav class="footer-navigation">
