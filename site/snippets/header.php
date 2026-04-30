@@ -259,12 +259,9 @@
     }
 
     </style>
-
-    <script>
-      console.log(`<?php dump($page) ?>`);
-    </script>
 	</head>
 	<body>
+    <?php $pageSlug = $page->slug(); ?>
 
     <div class="grid">
 
