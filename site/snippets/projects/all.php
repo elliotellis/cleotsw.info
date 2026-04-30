@@ -3,7 +3,7 @@
     <div class="project">
       <?php if ($project->works()): ?>
         <?php foreach ($project->content()->works()->toStructure() as $work): ?>
-          <figure class="project-image piw-<?php $work->width(); ?>">
+          <figure class="project-image piw-<?= $work->width(); ?>">
             <?php if ($work->image()): ?>
               <img src="<?php print($work->image()->toFile()->url()); ?>" alt="<?php print($work->title()); ?>">
             <?php endif; ?>

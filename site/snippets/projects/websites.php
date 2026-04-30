@@ -3,7 +3,7 @@
     <div class="project">
       <?php if ($project->works()): ?>
         <?php foreach ($project->content()->works()->toStructure()->filterBy('categories', 'websites', ',') as $work): ?>
-          <figure class="project-image piw-<?php $work->width(); ?>">
+          <figure class="project-image piw-<?= $work->width(); ?>">
             <img src="<?php print($work->image()->toFile()->url()); ?>" alt="<?php print($work->title()); ?>">
             <?php if ($work->text()): ?>
               <figcaption><?php print($work->caption()->kt()); ?></figcaption>
