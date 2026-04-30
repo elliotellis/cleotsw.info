@@ -248,6 +248,10 @@
       padding-top: 4rem;
     }
 
+    .page .text-container > * {
+      max-width: 40rem;
+    }
+
     .page .text-container > *:first-of-type {
       margin-top: 0;
     }
