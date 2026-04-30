@@ -265,7 +265,6 @@
     </script>
 	</head>
 	<body>
-    <?php $pageSlug = $page->slug(); ?>
 
     <div class="grid">
 

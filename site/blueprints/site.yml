@@ -1,5 +1,17 @@
 title: Site
 
 sections:
-  pages:
+  content:
     type: pages
+    template:
+      - projects
+      - texts
+  pages: 
+    type: pages
+    status: listed
+    template: default
+  links:
+    type: pages
+    label: External links
+    help: not working just yet!
+    template: link
