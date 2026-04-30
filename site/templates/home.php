@@ -1,5 +1,5 @@
 <?php snippet('header'); ?>
-<?php snippet('projects'); ?>
+<?php snippet('projects/all'); ?>
 
 <!--
 <main class="main projects">

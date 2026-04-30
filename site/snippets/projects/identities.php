@@ -1,5 +1,5 @@
-<main class="main projects <?php /* logic for specific projects pages id/pubs/web/ephem etc */ ?>">
-  <?php foreach ($kirby->collection('projects') as $project): ?>
+<main class="main projects">
+  <?php foreach ($kirby->collection('projects/identities') as $project): ?>
     <div class="project">
       <?php if ($project->works()): ?>
         <?php foreach ($project->content()->works()->toStructure() as $work): ?>

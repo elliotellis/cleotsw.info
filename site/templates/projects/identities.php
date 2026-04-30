@@ -1,4 +1,6 @@
 <?php snippet('header'); ?>
-<?php snippet('projects'); ?>
+
+test
+<?php snippet('projects/identities'); ?>
 
 <?php snippet('footer'); ?>
