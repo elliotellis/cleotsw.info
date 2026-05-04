@@ -15,3 +15,27 @@ sections:
     label: External links
     help: not working just yet!
     template: link
+  options:
+    type: fields
+    fields:
+      favicon:
+        type: structure
+        min: 1
+        max: 1
+        help: Use https://tools.rmv.fyi/tools/favicon-genny to generate PNGs from your square SVG
+        fields:
+          svg:
+            label: SVG
+            type: files
+            template: image
+            max: 1
+          png16x:
+            label: PNG 16x16
+            type: files
+            template: image
+            max: 1
+          png32x:
+            label: PNG 32x32
+            type: files
+            template: image
+            max: 1

@@ -3,6 +3,21 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <?php if ($site->favicon()): ?>
+      <?php foreach($site->favicon()->toStructure() as $favicon): ?>
+        <?php if ($favicon->png16x()->toFile()): ?>
+          <link rel="icon" type="image/png" href="<?= $favicon->png16x()->toFile()->url() ?>">
+        <?php endif; ?>
+        <?php if ($favicon->png32x()->toFile()): ?>
+          <link rel="icon" type="image/png" href="<?= $favicon->png32x()->toFile()->url() ?>">
+        <?php endif; ?>
+        <?php if ($favicon->svg()->toFile()): ?>
+          <link rel="icon" href="<?= $favicon->svg()->toFile()->url() ?>">
+        <?php endif; ?>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <script>console.log('favicon() conditional failing')</script>
+    <?php endif; ?>
 		<title>
       <?php if ($page->title()->html() != "Home"): ?>
         <?= $page->title()->html() ?> &ndash;
