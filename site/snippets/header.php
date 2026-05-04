@@ -20,7 +20,7 @@
       <nav class="main-navigation">
         <h1 class="site-name <?php if ($pageSlug === 'home') echo 'current'; ?>">
           <a href="<?= $site->url() ?>">
-            <?= $site->title()->html() ?>
+            <?= str_replace('TSW', '<span class="allcaps">TSW</span>', $site->title()->html()) ?>
           </a>
         </h1>
         <ul class="projects-navigation">

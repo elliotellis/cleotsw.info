@@ -115,6 +115,8 @@ p:has(code) {
 
 p > code { display: none; }
 
+.allcaps { letter-spacing: calc(var(--tracking-base) + 0.01em); }
+
 
 /* ============================= *
  * SITE GRID SYSTEM
@@ -170,6 +172,8 @@ p > code { display: none; }
   font-size: inherit;
   font-weight: inherit;
 }
+
+.site-name .allcaps { letter-spacing: calc(var(--tracking-nav) + 0.01em); }
 
 .site-name a, 
 .projects-navigation a, 
