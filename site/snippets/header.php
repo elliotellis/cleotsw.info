@@ -51,12 +51,9 @@
       </nav>
       <nav class="footer-navigation">
         <ul>
-          <?php foreach ($site->children()->listed()->filterBy('template', 'link') as $link): ?>
-            test
-            <?= $link->url() ?>
+          <?php foreach ($site->footerLinks()->toStructure() as $link): ?>
+            <li><a href="<?= $link->url() ?>" target="_blank"><?= $link->linkText() ?></a></li>
           <?php endforeach; ?>
-          <li><a href="https://o-c.info" target="_blank">Off Course</a></li>
-          <li><a href="mailto:cleotsw@gmail.com">Email</a></li>
         </ul>
       </nav>
     </header>

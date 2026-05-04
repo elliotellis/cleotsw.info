@@ -10,14 +10,18 @@ sections:
     type: pages
     status: listed
     template: default
-  links:
-    type: pages
-    label: External links
-    help: not working just yet!
-    template: link
   options:
     type: fields
     fields:
+      footerLinks:
+        label: External links
+        type: structure
+        fields:
+          linkText:
+            type: text
+          url:
+            type: text
+            help: Include the https://, or for email, use mailto:cleotsw@gmail.com
       favicon:
         type: structure
         min: 1
