@@ -6,10 +6,11 @@
           <figure class="project-image piw-<?= $work->width(); ?>">
             <?php if ($work->image()): ?>
               <picture>
+                <?php /*  AVIF not seeming to work on Uberspace server so disabling for now
                 <source
                   srcset="<?= $work->image()->toFile()->srcset('avif'); ?>"
                   type="image/avif"
-                >
+                > */ ?>
                 <source
                   srcset="<?= $work->image()->toFile()->srcset('webp'); ?>"
                   type="image/webp"
