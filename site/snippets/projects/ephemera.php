@@ -4,7 +4,24 @@
       <?php if ($project->works()): ?>
         <?php foreach ($project->content()->works()->toStructure()->filterBy('categories', 'ephemera', ',') as $work): ?>
           <figure class="project-image piw-<?= $work->width(); ?>">
-            <img src="<?php print($work->image()->toFile()->url()); ?>" alt="<?php print($work->title()); ?>">
+            <?php if ($work->image()): ?>
+              <picture>
+                <?php /*  AVIF not seeming to work on Uberspace server so disabling for now
+                <source
+                  srcset="<?= $work->image()->toFile()->srcset('avif'); ?>"
+                  type="image/avif"
+                > */ ?>
+                <source
+                  srcset="<?= $work->image()->toFile()->srcset('webp'); ?>"
+                  type="image/webp"
+                >
+                <img
+                  alt="<?= $work->title()->value() ?>"
+                  src="<?= $work->image()->toFile()->resize(480)->url() ?>"
+                  srcset="<?= $work->image()->toFile()->srcset(); ?>"
+                >
+              </picture>
+            <?php endif; ?>
             <?php if ($work->text()): ?>
               <figcaption><?php print($work->caption()->kt()); ?></figcaption>
             <?php endif; ?>
