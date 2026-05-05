@@ -140,6 +140,9 @@ p > code { display: none; }
   flex-direction: column;
   padding: var(--margin-base);
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media only screen and (42rem < width) {
