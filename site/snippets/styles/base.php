@@ -139,7 +139,7 @@ p > code { display: none; }
   display: flex;
   flex-direction: column;
   padding: var(--margin-base);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @media only screen and (42rem < width) {
