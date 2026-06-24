@@ -4,5 +4,5 @@ return function ($websites) {
   return page('projects')
     ->children()
     ->listed()
-    ->filterBy('categories', 'websites', ',');
+    ->filterBy('categories', 'web', ',');
 };

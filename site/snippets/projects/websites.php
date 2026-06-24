@@ -2,7 +2,7 @@
   <?php foreach ($kirby->collection('projects/websites') as $project): ?>
     <div class="project">
       <?php if ($project->works()): ?>
-        <?php foreach ($project->content()->works()->toStructure()->filterBy('categories', 'websites', ',') as $work): ?>
+        <?php foreach ($project->content()->works()->toStructure()->filterBy('categories', 'web', ',') as $work): ?>
           <figure class="project-image piw-<?= $work->width(); ?>">
             <?php if ($work->image()): ?>
               <picture>

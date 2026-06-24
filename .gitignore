@@ -56,3 +56,8 @@ Icon
 /content/site.txt
 content/site.txt
 content/
+/content_backup/
+/content_backup/*
+/content_backup/site.txt
+content_backup/site.txt
+content_backup/
