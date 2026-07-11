@@ -17,6 +17,9 @@
                   type="image/webp"
                 >
                 <img
+                  width="<?= $work->image()->toFile()->width() ?>"
+                  height="<?= $work->image()->toFile()->height() ?>"
+                  loading="lazy"
                   alt="<?= $work->title()->value() ?>"
                   src="<?= $work->image()->toFile()->resize(480)->url() ?>"
                   srcset="<?= $work->image()->toFile()->srcset(); ?>"

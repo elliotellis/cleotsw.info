@@ -241,6 +241,7 @@ figure { margin: 0; }
 figure img {
   display: block;
   width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
