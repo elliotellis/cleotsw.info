@@ -40,7 +40,7 @@
     --colour-black: #000;
     --colour-grey: #aaa;
 
-    --typeface-main: 'FreeUniversal', serif;
+    --typeface-main: 'FreeUniversal', Arial, sans-serif;
     --typeface-texts: 'Courier New', monospace;
     --font-stroke: 0px;
     --font-stroke-smcp: .25px;
