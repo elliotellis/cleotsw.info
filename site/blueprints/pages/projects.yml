@@ -9,4 +9,4 @@ drafts:
 listed:
   extends: sections/projects
   label: Published Projects
-  layout: cards
+  layout: list

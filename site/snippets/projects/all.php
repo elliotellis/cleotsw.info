@@ -13,19 +13,17 @@
                 > */ ?>
                 <source
                   srcset="<?= $work->image()->toFile()->srcset('webp'); ?>"
-                  type="image/webp"
-                >
+                  type="image/webp">
                 <img
                   width="<?= $work->image()->toFile()->width() ?>"
                   height="<?= $work->image()->toFile()->height() ?>"
                   loading="lazy"
                   alt="<?= $work->title()->value() ?>"
                   src="<?= $work->image()->toFile()->resize(480)->url() ?>"
-                  srcset="<?= $work->image()->toFile()->srcset(); ?>"
-                >
+                  srcset="<?= $work->image()->toFile()->srcset(); ?>">
               </picture>
             <?php endif; ?>
-            <?php if ($work->text()): ?>
+            <?php if ($work->caption()->isNotEmpty()): ?>
               <figcaption><?php print($work->caption()->kt()); ?></figcaption>
             <?php endif; ?>
           </figure>

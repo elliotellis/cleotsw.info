@@ -1,7 +1,7 @@
 type: pages
 label: Projects
 parent: kirby.page('projects')
-layout: cards
+layout: list
 template: project
 image:
   query: page.images.template("cover").first

@@ -9,4 +9,4 @@ drafts:
 listed:
   extends: sections/texts
   label: Published texts
-  layout: cards
+  layout: list

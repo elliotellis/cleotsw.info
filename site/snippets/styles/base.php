@@ -286,6 +286,10 @@
  * PROJECT IMAGES/STREAM
  * ============================= */
 
+  .project {
+    margin-bottom: calc(2*var(--margin-base));
+  }
+
   figure {
     margin: 0;
   }
