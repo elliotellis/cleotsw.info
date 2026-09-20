@@ -19,7 +19,7 @@
 
   @font-face {
     font-family: 'FreeUniversal';
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
     src: url('/assets/fonts/FreeUniversal-Regular.woff2') format('woff2');
   }
@@ -42,9 +42,9 @@
 
     --typeface-main: 'FreeUniversal', Arial, sans-serif;
     --typeface-texts: 'Courier New', monospace;
-    --font-stroke: 0px;
-    --font-stroke-smcp: .25px;
-    --font-stroke-texts: .5px;
+    --font-stroke: 0;
+    --font-stroke-smcp: .02em;
+    --font-stroke-texts: .035em;
     --fontweight-reg: 400;
     --fontweight-bold: 700;
     --leading-base: 1.3;
